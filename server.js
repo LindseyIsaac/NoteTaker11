@@ -10,8 +10,8 @@ const db = require('./db/db.json')
 
 const apiRoutes = require('./routes/apiRoute');
 
-const uuid = require('uuid');
-
+// const uuid = require('uuid');
+const { v4: uuidv4 } = require("uuid");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
