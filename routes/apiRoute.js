@@ -4,15 +4,15 @@ const { v4: uuidv4 } = require('uuidv4');
 const path = require('path');
 const router = require('express').Router();
 
-app.get('/notes', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/notes.html'));
+router.get('/notes', (req, res) => {
+        res.sendFile(path.join(__dirname, './public/notes.html'));
     });
-app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/index.html'));
+router.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, './public/index.html'));
     });
 
-    module.exports = router;
-app.post('/api/notes', (req, res) => {
+   
+router.post('/api/notes', (req, res) => {
 
 app.delete('/api/notes/:id', (req, res) => {
     let db = JSON.parse(fs.readFileSync('db/db.json'))
@@ -21,3 +21,5 @@ app.delete('/api/notes/:id', (req, res) => {
     res.json(trashNote);
 });
 });
+
+module.exports = router;
