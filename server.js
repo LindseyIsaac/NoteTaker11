@@ -1,18 +1,25 @@
 const express = require('express');
+
 const app = express();
+
 const fs = require('fs');
+
 const PORT = process.env.PORT || 3001;
-const db = require()
 
+const db = require('./db/db.json')
 
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+const apiRoutes = require('./routes/apiRoute');
+
+const uuid = require('uuid');
+
 app.use(express.json());
-app.use('/api', routes);
-app.use('/', routes);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
+app.use('/api', apiRoutes);
+app.use('/', apiRoutes);
 
 
 app.listen(PORT, () => {
-    console.log('available at local${PORT}');
+    console.log('Listening at local${PORT}');
 });
 
