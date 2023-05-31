@@ -11,12 +11,13 @@ router.get('*', (req, res) => {
     });
 
    
-router.post('/api/notes', (req, res) => {
+router.post('/api/notes', (req, res) => { 
     let newNote = {
         title: req.body.title,
         text: req.body.text,
         id: uuid()
-    }
+    };
+   
     db.push(newNote);
     fs.writeFileSync('db/db.json', 
     JSON.stringify(db));
