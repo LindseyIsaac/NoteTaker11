@@ -22,4 +22,3 @@ app.use('/', apiRoutes);
 app.listen(PORT, () => {
     console.log('Listening at local${PORT}');
 });
-
