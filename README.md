@@ -6,7 +6,7 @@
 
 This note taker is for easy use, take and delete notes with ease! 
 ## Deployed Link
-
+https://notetaker-eleven.herokuapp.com/
 ## Credits
 
 ***Tutor help from: Robbie Kurl***<br>
